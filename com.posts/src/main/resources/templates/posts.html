@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymleaf.org ">
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>Profile</title>
+	</head>
+	<body>
+		<h1>Post Details</h1>
+		<div class="profile-details">
+			<p><strong>Caption:</strong><span th:text="${post.caption}"></span></p>
+			<p><strong>Photo:</strong></p>
+			<img th:if="${post.photoBase64}"
+			th:src="'data:image/jpeg;base64,' +${ppost.photoBase64}"
+			alt="post Photo" />
+			<p th:if ="${!post.photoBase64}">No photo available</p>
+		</div>
+		<a href="/create">Back to Form</a>
+	</body>
+</html>
